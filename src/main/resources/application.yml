@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://hansken.db.elephantsql.com:5432/mcydbnbl
+    username: mcydbnbl
+    password: 0Cb_X4Bj6cjr7EUs7NP0oM3iNcrlKqvB
+jpa:
+  hibernate:
+    #update: para que me cree las tablas de base de datos automaticamente
+    #create: para que me elimine los datos existentes y se vuelvan a crear
+    ddl-auto: update
+  show-sql: true #para mostrar el sql cuando haga peticiones
