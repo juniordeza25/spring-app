@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -28,12 +29,12 @@ public class ProductController {
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Product> createProduct(@RequestBody ProductDto productDto){
+    public ResponseEntity<Product> createProduct(@Valid @RequestBody ProductDto productDto){
         return new ResponseEntity<>(productService.createProduct(productDto), HttpStatus.CREATED);
     }
 
     @PutMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Product> updateProduct(@RequestBody ProductDto productDto){
+    public ResponseEntity<Product> updateProduct(@Valid@RequestBody ProductDto productDto){
         return new ResponseEntity<>(productService.updateProduct(productDto), HttpStatus.OK);
     }
 

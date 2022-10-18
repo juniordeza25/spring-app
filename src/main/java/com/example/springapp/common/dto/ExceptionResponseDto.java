@@ -1,17 +1,11 @@
 package com.example.springapp.common.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@AllArgsConstructor @NoArgsConstructor @Getter @Setter @Builder
 public class ExceptionResponseDto {
     private LocalDateTime timestamp;
     private String error;

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -27,12 +28,12 @@ public class CategoryController {
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Category> createCategory(@RequestBody CategoryDto categoryDto){
+    public ResponseEntity<Category> createCategory(@Valid @RequestBody CategoryDto categoryDto){
         return new ResponseEntity<>(categoryService.createCategory(categoryDto), HttpStatus.CREATED);
     }
 
     @PutMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Category> updateCategory(@RequestBody CategoryDto categoryDto){
+    public ResponseEntity<Category> updateCategory(@Valid @RequestBody CategoryDto categoryDto){
         return new ResponseEntity<>(categoryService.updateCategory(categoryDto), HttpStatus.OK);
     }
 
